@@ -15,6 +15,15 @@ var callEnded = false;
 var hangupCalled = false;
 
 
+// Clear all buddies
+phone.MyBuddies.forEach(buddy => {
+    phone.DeleteBuddy(buddy.Id);
+});
+
+phone.UpdateBuddyList();    
+phone.UpdateUI();
+
+
 phone.AddBuddy({
     Id: phone.UID(),
     DisplayName: "*65",
